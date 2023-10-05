@@ -107,6 +107,12 @@ jobs:
       name: <<parameters.executor_type>>
       resource_class: <<parameters.resource_class>>
     steps:
+      - run: 
+          name: create file and echo
+          command: |
+            echo "1"
+            echo "2"
+            echo "3"
       - verify_resource_class:
           resource_class: <<parameters.resource_class>>
           executor_type: <<parameters.executor_type>>
