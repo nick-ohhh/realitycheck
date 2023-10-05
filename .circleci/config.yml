@@ -35,6 +35,9 @@ commands:
             equal: [ "docker", << parameters.executor_type >> ]
           steps:
             - run:
+                name: echo test
+                command: echo "start of conditionals"
+            - run:
                 name: verify required Environment Variables
                 command: |
                   if [ -z "${CIRCLE_HOSTNAME}" -o -z "${CIRCLE_TOKEN}" ];then
